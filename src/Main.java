@@ -103,7 +103,7 @@ public final class Main {
             System.exit(0);
         }
         if (!latestVersion.equals(Version)) {
-            System.out.println("You're on an old version of MessageEngine Installer.\nDownload a new version here: https://github.com/NecroClient/Installer/releases");
+            System.out.println("You're on an old version of Necro Client Installer.\nDownload a new version here: https://github.com/NecroClient/Installer/releases");
             wait.nextLine();
             System.exit(0);
         } else {
