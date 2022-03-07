@@ -10,7 +10,7 @@ _______
 
 ## Supported Operating Systems
 - MacOS
-- Coming Soon: Windows
+- Windows
 - Coming Soon: Linux
 
 ## How to run:
