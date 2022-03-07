@@ -64,7 +64,7 @@ public final class Main {
         }
         System.out.println("Cloned the mods repository.");
 
-
+        System.out.println("Done!");
 
 
     }
