@@ -10,7 +10,7 @@ _______
 
 ## How to run:
 1. Prerequisites: You need [git](https://git-scm.com/downloads) and [Forge](https://files.minecraftforge.net/net/minecraftforge/forge/)
-2. Download [the Installer](https://github.com/NecroClient/Installer/blob/master/build/NecroInstaller.jar)
+2. Download [the Installer](https://github.com/NecroClient/Installer/releases)
 3. **Warning**: Running the jar will delete all your current mods and replace them with the Necro Client mods.
 4. **Warning**: It will also delete your current mod config and replace it with the Necro Client mod config.
 5. Run the jar file from the command line: `java -jar NecroInstaller.jar`.
