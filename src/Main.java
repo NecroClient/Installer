@@ -158,9 +158,9 @@ public final class Main {
         } else {
             System.out.println("\n[NecroInstaller] Your operating System, [" + os + "], is not supported.");
             System.out.print("[NecroInstaller] This might be caused by an old version of this installer. \n[NecroInstaller] You can check for a newer version here: ");
-            System.out.println("https://github.com/afkvido-development/MessageEngineInstaller-Java/releases/latest");
+            System.out.println("https://github.com/NecroClient/Installer/releases/latest");
             System.out.print("[NecroInstaller] If you're already on the latest version, please file a bug report here: ");
-            System.out.println("https://github.com/afkvido-development/MessageEngineInstaller-Java/issues\n");
+            System.out.println("https://github.com/NecroClient/Installer/issues\n");
             Scanner wait = new Scanner(System.in);
             wait.nextLine();
             System.exit(0);
