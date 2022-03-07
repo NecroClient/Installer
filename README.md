@@ -3,6 +3,11 @@
 
 _______
 
+<a href = "https://github.com/NecroClient/Installer/releases/latest">
+<img src="https://raw.githubusercontent.com/afkvido/image-repository/ImageRepo/Modern%20Download%20Button.png" width="225"/>
+</a>
+
+
 ## Supported Operating Systems
 - MacOS
 - Coming Soon: Windows
