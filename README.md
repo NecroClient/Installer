@@ -26,3 +26,6 @@ _______
 
 ## Common Errors
 - Coming soon
+
+
+<h6>Bring your FPS back from the dead with Necro Client</h6>
