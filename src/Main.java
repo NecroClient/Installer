@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public final class Main {
 
-    final static String Version = "0.0.1";
+    final static String Version = "0.1.0";
 
     final static String fail = "URLreader failed";
 
