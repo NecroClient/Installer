@@ -29,4 +29,4 @@ _______
 - **Error**: 'Git' is not found! | **Fix**: Make sure to [install git](https://git-scm.com/downloads)
 
 
-<h6>Bring your FPS back from the dead with Necro Client</h6>
+<h6 align = "center">Bring your FPS back from the dead with Necro Client</h6>
