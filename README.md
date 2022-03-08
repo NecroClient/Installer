@@ -25,7 +25,7 @@ _______
 
 
 ## Common Errors
-- **Error**: Java is outdated! | **Fix**: Install the latest JDK, in this case JDK 17.
+- **Error**: Java is outdated! | **Fix**: Install the latest JDK, in this case [JDK 17](https://www.oracle.com/java/technologies/downloads).
 - **Error**: 'Git' is not found! | **Fix**: Make sure to [install git](https://git-scm.com/downloads)
 
 
