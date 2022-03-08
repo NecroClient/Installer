@@ -11,7 +11,7 @@ _______
 ## Supported Operating Systems
 - MacOS
 - Windows
-- Coming Soon: Linux
+- Linux
 
 ## How to run:
 1. Prerequisites: You need [git](https://git-scm.com/downloads) and [Forge](https://files.minecraftforge.net/net/minecraftforge/forge/)
@@ -25,7 +25,8 @@ _______
 
 
 ## Common Errors
-- Coming soon
+- **Error**: Java is outdated! | **Fix**: Install the latest JDK, in this case JDK 17.
+- **Error**: 'Git' is not found! | **Fix**: Make sure to [install git](https://git-scm.com/downloads)
 
 
 <h6>Bring your FPS back from the dead with Necro Client</h6>
