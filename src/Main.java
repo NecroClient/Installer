@@ -164,6 +164,71 @@ public final class Main {
 
     }
 
+    static void Linux () {
+
+        Process process;
+
+
+        // Creating a File object
+        File file = new File(System.getenv("HOME") + "/.minecraft/mods");
+
+        // Deleting the directory
+        boolean bl = file.delete();
+        if (bl) {
+            System.out.println("[NecroInstaller] Deleted the mods directory");
+        } else {
+            System.out.println("[NecroInstaller] Could not delete the the mods directory, it might not exist.");
+        }
+
+
+
+        // Creating a File object
+        File file2 = new File(System.getenv("HOME") + "/.minecraft/config");
+
+        // Deleting the directory
+        boolean bl2 = file2.delete();
+        if (bl2) {
+            System.out.println("[NecroInstaller] Deleted the config directory");
+        } else {
+            System.out.println("[NecroInstaller] Could not delete the the config directory, it might not exist.");
+        }
+
+
+
+        System.out.println("[NecroInstaller] Cloning the mods repository...");
+        try {
+
+            process = Runtime.getRuntime().exec("git clone https://github.com/NecroClient/mods.git", null, new File (System.getenv("HOME") + "/.minecraft"));
+
+            printResults(process);
+
+        } catch (Exception exception) {
+            exception.printStackTrace();
+        }
+        System.out.println("[NecroInstaller] Cloned the mods repository.");
+
+
+
+        System.out.println("[NecroInstaller] Cloning the config repository...");
+        try {
+
+            process = Runtime.getRuntime().exec("git clone https://github.com/NecroClient/config.git", null, new File (System.getenv("HOME") + "/.minecraft"));
+
+            printResults(process);
+
+        } catch (Exception exception) {
+            exception.printStackTrace();
+        }
+        System.out.println("[NecroInstaller] Cloned the config repository.");
+
+
+
+
+        System.out.println("[NecroInstaller] Done!");
+
+
+    }
+
     // ---------------
 
     static String check (String url) {
@@ -219,7 +284,7 @@ public final class Main {
         } else if (os.contains("Windows")) {
             Windows();
         } else if (os.contains("Linux") || os.contains("Ubuntu")) {
-            // Linux();
+            Linux();
         } else {
             System.out.println("\n[NecroInstaller] Your operating System, [" + os + "], is not supported.");
             System.out.print("[NecroInstaller] This might be caused by an old version of this installer. \n[NecroInstaller] You can check for a newer version here: ");
