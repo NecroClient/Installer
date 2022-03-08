@@ -4,10 +4,11 @@ import java.io.InputStreamReader;
 import java.net.URL;
 import java.util.Scanner;
 
+
 public final class Main {
 
     /** Version of Installer */
-    final static String Version = "0.1.0";
+    final static String Version = "0.1.1";
 
     /** Result if URLreader failed. */
     final static String fail = "URLreader failed";
@@ -46,6 +47,19 @@ public final class Main {
         File file = new File(System.getenv("HOME") + "/Library/Application Support/minecraft/mods");
 
         // Deleting the directory
+
+        try {
+
+            String[] entries = file.list();
+            for (String s : entries) {
+                File currentFile = new File(file.getPath(), s);
+                currentFile.delete();
+            }
+        } catch (Exception ignored) {
+
+        }
+
+
         boolean bl = file.delete();
         if (bl) {
             System.out.println("[NecroInstaller] Deleted the mods directory");
@@ -59,6 +73,18 @@ public final class Main {
         File file2 = new File(System.getenv("HOME") + "/Library/Application Support/minecraft/config");
 
         // Deleting the directory
+
+        try {
+
+            String[] entries2 = file2.list();
+            for (String s : entries2) {
+                File currentFile = new File(file2.getPath(), s);
+                currentFile.delete();
+            }
+        } catch (Exception ignored) {
+
+        }
+
         boolean bl2 = file2.delete();
         if (bl2) {
             System.out.println("[NecroInstaller] Deleted the config directory");
