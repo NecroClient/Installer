@@ -6,16 +6,20 @@ import java.util.Scanner;
 
 public final class Main {
 
+    /** Version of Installer */
     final static String Version = "0.1.0";
 
+    /** Result if URLreader failed. */
     final static String fail = "URLreader failed";
 
+    /** Operating system. */
     static String os;
 
 
 
     // ---------------
 
+    /** What is run. */
     public static void main(String[] args) {
 
         System.out.println("[NecroInstaller] Necro Mods folder installer");
@@ -32,6 +36,7 @@ public final class Main {
 
     // ---------------
 
+    /** MacOS file system installer. */
     static void MacOS () {
 
         Process process;
@@ -97,6 +102,7 @@ public final class Main {
 
     }
 
+    /** Windows file system installer. */
     static void Windows () {
 
         Process process;
@@ -162,6 +168,7 @@ public final class Main {
 
     }
 
+    /** Linux file system installer. */
     static void Linux () {
 
         Process process;
@@ -229,6 +236,7 @@ public final class Main {
 
     // ---------------
 
+    /** Read a URL. */
     static String check (String url) {
         String r;
         try {
@@ -249,6 +257,7 @@ public final class Main {
         return r;
     }
 
+    /** Enforce the version of the installer. */
     static void version () {
 
         Scanner wait = new Scanner(System.in);
@@ -270,11 +279,13 @@ public final class Main {
 
     }
 
+    /** Check the OS. */
     static void manageOS () {
         os = System.getProperty("os.name");
         System.out.println("[NecroInstaller] OS: " + os);
     }
 
+    /** Run the proper installer based on the operating system. */
     static void decide () {
 
         if (os.contains("Mac OS") || os.contains("MacOS")) {
@@ -296,6 +307,7 @@ public final class Main {
 
     }
 
+    /** Print the results of the command line process. */
     static void printResults (Process process) {
 
         try {
@@ -307,6 +319,11 @@ public final class Main {
             }
 
         } catch (Exception ignored) {}
+    }
+
+    /** Utility class <b>Main</b> cannot be initialized. */
+    private Main () {
+
     }
 
 }
