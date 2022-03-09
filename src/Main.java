@@ -8,7 +8,7 @@ import java.util.Scanner;
 public final class Main {
 
     /** Version of Installer */
-    final static String Version = "0.1.1";
+    final static String Version = "0.1.2";
 
     /** Result if URLreader failed. */
     final static String fail = "URLreader failed";
@@ -134,11 +134,28 @@ public final class Main {
         Process process;
 
 
+
         // Creating a File object
-        File file = new File(System.getenv("APPDATA") + "\\.minecraft\\mods");
+        File file2 = new File(System.getenv("APPDATA") + "\\.minecraft\\mods");
 
         // Deleting the directory
-        boolean bl = file.delete();
+
+        try {
+
+            String[] entries = file2.list();
+            for (String s : entries) {
+                File currentFile = new File(file2.getPath(), s);
+                currentFile.delete();
+            }
+        } catch (Exception ignored) {
+
+        }
+
+        // Creating a File object
+        File file1 = new File(System.getenv("APPDATA") + "\\.minecraft\\mods");
+
+        // Deleting the directory
+        boolean bl = file1.delete();
         if (bl) {
             System.out.println("[NecroInstaller] Deleted the mods directory");
         } else {
@@ -147,11 +164,32 @@ public final class Main {
 
 
 
+
+
+
         // Creating a File object
-        File file2 = new File(System.getenv("APPDATA") + "\\.minecraft\\config");
+        File file4 = new File(System.getenv("APPDATA") + "\\.minecraft\\config");
 
         // Deleting the directory
-        boolean bl2 = file2.delete();
+
+        try {
+
+            String[] entries = file4.list();
+            for (String s : entries) {
+                File currentFile = new File(file4.getPath(), s);
+                currentFile.delete();
+            }
+        } catch (Exception ignored) {
+
+        }
+
+
+
+        // Creating a File object
+        File file3 = new File(System.getenv("APPDATA") + "\\.minecraft\\config");
+
+        // Deleting the directory
+        boolean bl2 = file3.delete();
         if (bl2) {
             System.out.println("[NecroInstaller] Deleted the config directory");
         } else {
@@ -203,6 +241,24 @@ public final class Main {
         // Creating a File object
         File file = new File(System.getenv("HOME") + "/.minecraft/mods");
 
+
+        // Creating a File object
+        File file5 = new File(System.getenv("HOME") + "/.minecraft/mods");
+
+        // Deleting the directory
+
+        try {
+
+            String[] entries = file5.list();
+            for (String s : entries) {
+                File currentFile = new File(file5.getPath(), s);
+                currentFile.delete();
+            }
+        } catch (Exception ignored) {
+
+        }
+
+
         // Deleting the directory
         boolean bl = file.delete();
         if (bl) {
@@ -211,6 +267,26 @@ public final class Main {
             System.out.println("[NecroInstaller] Could not delete the the mods directory, it might not exist.");
         }
 
+
+
+
+
+
+        // Creating a File object
+        File file6 = new File(System.getenv("HOME") + "/.minecraft/config");
+
+        // Deleting the directory
+
+        try {
+
+            String[] entries = file5.list();
+            for (String s : entries) {
+                File currentFile = new File(file5.getPath(), s);
+                currentFile.delete();
+            }
+        } catch (Exception ignored) {
+
+        }
 
 
         // Creating a File object
