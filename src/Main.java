@@ -26,9 +26,9 @@ public final class Main {
 
         System.out.println("[NecroInstaller] Necro Mods folder installer");
 
-        version(); // Check the Installer's version
+        version(); // Check the Installer's version.
 
-        manageOS(); // Check the System's OS
+        manageOS(); // Check the System's OS.
 
         decide(); // Run the proper installer based on the OS.
 
