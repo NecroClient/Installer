@@ -9,7 +9,7 @@ import java.util.Scanner;
 public final class Main {
 
     /** Version of Installer */
-    final static String Version = "0.1.3";
+    final static String Version = "0.2.0";
 
     /** Result if URLreader failed. */
     final static String fail = "URLreader failed";
@@ -68,7 +68,7 @@ public final class Main {
         String random = String.valueOf(r.nextInt(1, 999));
 
         // Move the directory
-        boolean mdMoved = modsDir.renameTo(new File(System.getenv("HOME") + "/Library/Application Support/minecraft/NecroBackups/mods_" + random));
+        boolean mdMoved = modsDir.renameTo(new File(backupDir + "/mods_" + random));
         if (mdMoved) {
             System.out.println("[NecroInstaller] Moved the mods directory");
         } else {
@@ -81,8 +81,8 @@ public final class Main {
         // Config directory path
         File configDir = new File(System.getenv("HOME") + "/Library/Application Support/minecraft/config");
 
-        // Deleting all the files in the config directory
-        boolean cdMoved =  configDir.renameTo(new File(System.getenv("HOME") + "/Library/Application Support/minecraft/NecroBackups/config_" + random));
+        // Moving the config directory
+        boolean cdMoved =  configDir.renameTo(new File(backupDir + "/config_" + random));
         if (cdMoved) {
             System.out.println("[NecroInstaller] Moved the config directory");
         } else {
@@ -120,6 +120,7 @@ public final class Main {
 
 
 
+        System.out.println("[NecroInstaller] Your mods folder backup number: " + random);
 
         System.out.println("[NecroInstaller] Done!");
 
@@ -133,56 +134,51 @@ public final class Main {
         Process process;
 
 
-        // Mods directory
+        // Mods backups directory path
+        File backupDir = new File(System.getenv("APPDATA") + "\\.minecraft\\NecroBackups");
+
+        // Create the backup directory
+        if (backupDir.mkdir()) {
+            System.out.println("[NecroInstaller] Created the NecroBackups directory");
+        } else {
+            System.out.println("[NecroInstaller] Couldn't create the NecroBackups directory, it probably already exists.");
+        }
+
+        // -------------------------------
+
+
+        // Mods directory path
         File modsDir = new File(System.getenv("APPDATA") + "\\.minecraft\\mods");
 
-        // Deleting all the files in the mods directory
-        try {
+        // New random
+        Random r = new Random();
 
-            String[] entries = modsDir.list();
-            for (String s : entries) {
-                File currentFile = new File(modsDir.getPath(), s);
-                currentFile.delete();
-            }
-        } catch (Exception ignored) {
+        // Random number, from 1 to 999
+        String random = String.valueOf(r.nextInt(1, 999));
 
-        }
-
-        // Deleting the mods directory
-        boolean bl = modsDir.delete();
-        if (bl) {
-            System.out.println("[NecroInstaller] Deleted the mods directory");
+        // Move the directory
+        boolean mdMoved = modsDir.renameTo(new File(backupDir + "\\mods_" + random));
+        if (mdMoved) {
+            System.out.println("[NecroInstaller] Moved the mods directory");
         } else {
-            System.out.println("[NecroInstaller] Could not delete the the mods directory, it might not exist.");
+            System.out.println("[NecroInstaller] Couldn't move the mods directory");
         }
 
+        // -------------------------------
 
 
-
-
-
-        // Config directory
+        // Config directory path
         File configDir = new File(System.getenv("APPDATA") + "\\.minecraft\\config");
 
         // Deleting all the files in the config directory
-        try {
-
-            String[] entries = configDir.list();
-            for (String s : entries) {
-                File currentFile = new File(configDir.getPath(), s);
-                currentFile.delete();
-            }
-        } catch (Exception ignored) {
-
-        }
-
-        // Deleting the config directory
-        boolean bl2 = configDir.delete();
-        if (bl2) {
-            System.out.println("[NecroInstaller] Deleted the config directory");
+        boolean cdMoved =  configDir.renameTo(new File( backupDir + "\\config_" + random));
+        if (cdMoved) {
+            System.out.println("[NecroInstaller] Moved the config directory");
         } else {
-            System.out.println("[NecroInstaller] Could not delete the the config directory, it might not exist.");
+            System.out.println("[NecroInstaller] Couldn't move the config directory");
         }
+
+        // -------------------------------
 
 
 
@@ -214,6 +210,7 @@ public final class Main {
 
 
 
+        System.out.println("[NecroInstaller] Your mods folder backup number: " + random);
 
         System.out.println("[NecroInstaller] Done!");
 
@@ -227,59 +224,51 @@ public final class Main {
         Process process;
 
 
-        // Mods directory
+        // Mods backups directory path
+        File backupDir = new File(System.getenv("HOME") + "/.minecraft/NecroBackups");
+
+        // Create the backup directory
+        if (backupDir.mkdir()) {
+            System.out.println("[NecroInstaller] Created the NecroBackups directory");
+        } else {
+            System.out.println("[NecroInstaller] Couldn't create the NecroBackups directory, it probably already exists.");
+        }
+
+        // -------------------------------
+
+
+        // Mods directory path
         File modsDir = new File(System.getenv("HOME") + "/.minecraft/mods");
 
+        // New random
+        Random r = new Random();
 
-        // Deleting all the files in the mods directory
-        try {
+        // Random number, from 1 to 999
+        String random = String.valueOf(r.nextInt(1, 999));
 
-            String[] entries = modsDir.list();
-            for (String s : entries) {
-                File currentFile = new File(modsDir.getPath(), s);
-                currentFile.delete();
-            }
-        } catch (Exception ignored) {
-            System.out.println("[NecroInstaller] There was an error during the deletion of the files in the mods directory, perhaps it was empty?");
-        }
-
-
-        // Deleting the mods directory
-        boolean bl = modsDir.delete();
-        if (bl) {
-            System.out.println("[NecroInstaller] Deleted the mods directory");
+        // Move the directory
+        boolean mdMoved = modsDir.renameTo(new File(backupDir + "/mods_" + random));
+        if (mdMoved) {
+            System.out.println("[NecroInstaller] Moved the mods directory");
         } else {
-            System.out.println("[NecroInstaller] Could not delete the the mods directory, it might not exist.");
+            System.out.println("[NecroInstaller] Couldn't move the mods directory");
         }
 
-
-
-
+        // -------------------------------
 
 
         // Config directory
         File configDir = new File(System.getenv("HOME") + "/.minecraft/config");
 
         // Deleting all the files in the config directory
-        try {
-
-            String[] entries = configDir.list();
-            for (String s : entries) {
-                File currentFile = new File(configDir.getPath(), s);
-                currentFile.delete();
-            }
-        } catch (Exception ignored) {
-            System.out.println("[NecroInstaller] There was an error during the deletion of the files in the config directory, perhaps it was empty?");
-        }
-
-
-        // Deleting the config directory
-        boolean bl2 = configDir.delete();
-        if (bl2) {
-            System.out.println("[NecroInstaller] Deleted the config directory");
+        boolean cdMoved =  configDir.renameTo(new File( backupDir + "/config_" + random));
+        if (cdMoved) {
+            System.out.println("[NecroInstaller] Moved the config directory");
         } else {
-            System.out.println("[NecroInstaller] Could not delete the the config directory, it might not exist.");
+            System.out.println("[NecroInstaller] Couldn't move the config directory");
         }
+
+        // -------------------------------
 
 
 
@@ -311,6 +300,8 @@ public final class Main {
 
 
 
+
+        System.out.println("[NecroInstaller] Your mods folder backup number: " + random);
 
         System.out.println("[NecroInstaller] Done!");
 
@@ -346,6 +337,9 @@ public final class Main {
         Scanner wait = new Scanner(System.in);
 
         String latestVersion = check("https://raw.githubusercontent.com/NecroClient/api/main/Installer.yml").replace("\n", "");
+
+        System.out.println("[NecroInstaller] Current version: " + Version);
+        System.out.println("[NecroInstaller] Latest version: " + latestVersion);
 
         if (latestVersion.equals(fail)) {
             System.out.println("[NecroInstaller] Cannot connect to the Necro Client API.\nMake sure you have actual internet.\nOr, you might just have an old version. Download a new version here: https://github.com/NecroClient/Installer/releases");
